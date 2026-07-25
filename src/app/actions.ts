@@ -251,7 +251,7 @@ export async function getContestData(competitionId: number) {
 
 export async function submit(competitionId: number, participantId: number, values: Record<number, string>) {
   const {data, error} = await supabase
-    .rpc('validate_participant', {
+    .rpc('validate_participant_no_submit', {
       check_id: participantId
     })
     .select('submitted')
